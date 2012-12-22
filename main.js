@@ -109,6 +109,7 @@ _Main$.prototype = new _Main;
  * @param {Array.<undefined|!string>} args
  */
 _Main.main$AS = function (args) {
+	_Main$saveJSX$S("main");
 	dom$id$S("programmer").addEventListener("click", (function (e) {
 		_Main$loadClass$SF$F$HXLHuman$$V$("Programmer", (function (factory) {
 			/** @type {Human} */
@@ -139,6 +140,7 @@ _Main.loadClass$SF$F$HXLHuman$$V$ = function (className, callback) {
 	script.addEventListener("load", (function (e) {
 		var eval;
 		var factory;
+		_Main$saveJSX$S(className);
 		eval = (function (o) { return typeof(o) === "function" ? o : null; })(js.global.eval);
 		factory = (function (params) {
 			/** @type {!string} */
@@ -154,6 +156,27 @@ _Main.loadClass$SF$F$HXLHuman$$V$ = function (className, callback) {
 };
 
 var _Main$loadClass$SF$F$HXLHuman$$V$ = _Main.loadClass$SF$F$HXLHuman$$V$;
+
+/**
+ * @param {!string} className
+ */
+_Main.saveJSX$S = function (className) {
+	/** @type {Object.<string, undefined|*>} */
+	var JSXs;
+	if (! $__jsx_ObjectHasOwnProperty.call(js.global, "JSXs")) {
+		(function (v) {
+			if (! (v == null || typeof v === "object")) {
+				debugger;
+				throw new Error("[main.jsx:50] detected invalid cast, value is not a Map or null");
+			}
+			return v;
+		}(dom.window)).JSXs = {  };
+	}
+	JSXs = (function (o) { return o instanceof Object ? o : null; })(js.global.JSXs);
+	JSXs[className] = js.global.JSX;
+};
+
+var _Main$saveJSX$S = _Main.saveJSX$S;
 
 /**
  * class js extends Object
